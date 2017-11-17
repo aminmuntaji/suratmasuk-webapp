@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Formulir Tambah Data</title>
+</head>
+<body>
+
+	<h1 align="center">Tambah Data Surat Masuk</h1>
+
+	<form th:action="@{/tambah-data}" method="post" th:object="${prsm}">
+		<table align="center">
+			<tr>
+				<td>ID</td>
+				<td><input type="text" th:field="*{id}" /> </td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>TANGGAL SURAT</td>
+				<td><input type="text" th:field="*{tanggal_surat}" /> </td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>JUDUL</td>
+				<td><input type="text" th:field="*{judul}" /></td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>KEPADA</td>
+				<td><input type="text" th:field="*{kepada}" /></td>
+				<td></td>
+			</tr>
+
+			<tr>
+
+				<td></td>
+				<td>
+					<button type="submit">Simpan</button>
+				</td>
+
+			</tr>
+		</table>
+
+	</form>
+
+</body>
+</html>

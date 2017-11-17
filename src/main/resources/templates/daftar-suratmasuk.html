@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Daftar Surat Masuk</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<h1 align="center">Daftar Surat Masuk</h1>
+
+<table border="1" align="center">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>TANGGAL SURAT</td>
+        <td>JUDUL</td>
+        <td>KEPADA</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="prsm : ${daftarSuratmasuk}">
+        <td th:text="${prsm.id}"></td>
+        <td th:text="${prsm.tanggal_surat}"></td>
+        <td th:text="${prsm.judul}"></td>
+        <td th:text="${prsm.kepada}"></td>
+        <td>
+            <a th:href="@{/edit(id=${prsm.id})}">
+                Ubah
+            </a>
+        </td>
+        <td>
+            <a th:href="@{/delete(id=${prsm.id})}">
+                Hapus
+            </a>
+        </td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <td><a href="/tambah-data">Tambah Data</a></td>
+    </tr>
+    </tfoot>
+
+</table>
+</body>
+</html>
